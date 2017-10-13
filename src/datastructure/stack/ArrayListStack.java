@@ -16,43 +16,38 @@
 
 package datastructure.stack;
 
+import java.util.ArrayList;
+
 /**
  * Created by haeun on 2017-10-05
  */
-public class ArrayStack implements Stack<String> {
-
-    String[] items = new String[10000];
-
-    int top = -1;
+public class ArrayListStack implements Stack<String> {
+    ArrayList<String> items = new ArrayList();
 
     @Override
     public void push(String item) {
-        items[++top] = item;
+        items.add(item);
     }
 
     @Override
     public String pop() {
-        if (empty()) {
-            return null;
-        }
-        return items[top--];
+        String input = items.get(items.size() - 1);
+        items.remove(items.size() - 1);
+        return input;
     }
 
     @Override
     public String peek() {
-        if (empty()) {
-            return null;
-        }
-        return items[top];
+        return items.get(items.size() - 1);
     }
 
     @Override
     public int size() {
-        return top + 1;
+        return items.size();
     }
 
     @Override
     public boolean empty() {
-        return top == -1;
+        return items.isEmpty();
     }
 }

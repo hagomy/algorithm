@@ -1,12 +1,9 @@
-console.log('yeah~~~');
-
 a > b ? 'A' : 'B'
 
 // 10자리 초기값 0 배열 생성
 let arr = Array(10).fill(0);
 arr.push('z');
-arr.indexOf('z')
-arr.splice(i,1);
+arr.indexOf('z');
 Math.max.apply(null,sum);
 
 /* 배열 숫자 정렬 */
@@ -42,6 +39,24 @@ for(s of str){
     str.replace(/A/g,"#");
     str = str.toLowerCase().replace(/[^a-z]/g,'');
 }
+
+//Map
+let sH = new Map();
+sH.has(key) //Boolean 값 반환
+sH.get(key) //Key 해당 value 반환, 없으면 undefined 반환
+sH.set(key, value)
+for(let [key, val] of sH){}
+
+//splice(원본 변경), slice(복제)
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+var arr1 = arr.splice(10, 2, 'a', 'b', 'c');
+var arr2 = arr.slice(3, 5); // [4, 5]
+console.log(arr); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "a", "b", "c"]
+console.log(arr1); // [11, 12]
+
+
+
+
 
 //소수 구하기
 const isPrime = (num) => {
